@@ -1,40 +1,85 @@
-<!doctype html>
-<html lang="en">
+<html>
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script>
+      var az = [
+{"key":"A",value:"A a"},
+{"key":"B",value:"B b"},
+{"key":"C",value:"C c"},
+{"key":"D",value:"D d"},
+{"key":"E",value:"E e"},
+{"key":"F",value:"F f"},
+{"key":"G",value:"G g"},
+{"key":"H",value:"H h"},
+{"key":"I",value:"I i"},
+{"key":"J",value:"J j"},
+{"key":"K",value:"K k"},
+{"key":"L",value:"L l"},
+{"key":"K",value:"K k"},
+{"key":"N",value:"N n"},
+{"key":"O",value:"O o"},
+{"key":"P",value:"P p"},
+{"key":"Q",value:"Q q"},
+{"key":"R",value:"R r"},
+{"key":"S",value:"S s"},
+{"key":"T",value:"T t"},
+{"key":"U",value:"U u"},
+{"key":"V",value:"V v"},
+{"key":"W",value:"W w"},
+{"key":"X",value:"X x"},
+{"key":"Y",value:"Y y"},
+{"key":"Z",value:"Z z"}];
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
-
+      function spech(s){
+        var message = new SpeechSynthesisUtterance(s);
+      var voices = speechSynthesis.getVoices();
+      message.voice = voices[2];
+      speechSynthesis.speak(message);
+      }
+      function show(i,p){
+      if(i==11) return;
+      setTimeout(function(){
+        var s = `${p} ${i} za ${p*i}`;
+        spech(s);
+      console.log(s);
+      
+        show(i+1,p); 
+      },2000);
+      }
+      
+      function showaz(data,stop){
+      if(data==stop) return;
+      setTimeout(function(){
+        var s = az[data].key;
+        spech(s);  
+      showaz(data+1,stop); 
+      },2000);
+      }
+      </script>
   </head>
   <body>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-var p = 3,s="";
-for(var i=1;i<=10;i++){
-s+=`${p} ${i} za ${p*i}  `;
-}
-console.log(s);
-function show(i,p){
-if(i==11) return;
-var message = new SpeechSynthesisUtterance(`${p} ${i} za ${p*i}`);
-var voices = speechSynthesis.getVoices();
-message.voice = voices[3];
-speechSynthesis.speak(message);
- setTimeout(function(){
-show(i+1,p); 
- },1000);
-}
-show(1,4)   
-     </script>
+    <button onclick="showaz(1,100)">1 to 100</button>
+    <button onclick="show(1,2)">2</button>
+    <button onclick="show(1,3)">3</button>
+    <button onclick="show(1,4)">4</button>
+    <button onclick="show(1,5)">5</button>
+    <button onclick="show(1,6)">6</button>
+    <button onclick="show(1,7)">7</button>
+    <button onclick="show(1,8)">8</button>
+    <button onclick="show(1,9)">9</button>
+    <button onclick="show(1,10)">10</button>
+    <button onclick="show(1,11)">11</button>
+    <button onclick="show(1,12)">12</button>
+    <button onclick="show(1,13)">13</button>
+    <button onclick="show(1,14)">14</button>
+    <button onclick="show(1,15)">15</button>
+    <button onclick="show(1,16)">16</button>
+    <button onclick="show(1,17)">17</button>
+    <button onclick="show(1,18)">18</button>
+    <button onclick="show(1,19)">19</button>
+    <button onclick="show(1,20)">20</button>
+    <button onclick="showaz(0,26)">A to Z </button>
   </body>
 </html>
+
+
