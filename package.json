@@ -1,0 +1,36 @@
+{
+  "name": "creative-cv_free_1-0-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp | webpack-dev-server",
+    "build": "webpack --mode=production --build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-less": "^4.0.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "path": "^0.12.7",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhananjay431/resume2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dhananjay431/resume2/issues"
+  },
+  "homepage": "https://github.com/dhananjay431/resume2#readme",
+  "description": ""
+}
